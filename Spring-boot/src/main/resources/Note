@@ -1,0 +1,28 @@
+H2 database
+http://localhost:8080/h2-console
+
+     Postman
+Select the POST
+Invoke the URL http://localhost:8080/books
+{  
+    "bookid": "5433",  
+    "bookname": "Core and Advance Java",  
+    "author": "R. Nageswara Rao",  
+    "price": "800"  
+}
+
+Postman and send a GET request with the URL http://localhost:8080/books.
+
+GET request with the URL http://localhost:8080/book/{bookid}.
+
+
+DELETE method and invoke the URL http://localhost:8080/book/5433.
+
+Select the PUT
+
+{  
+    "bookid": "6321",  
+    "bookname": "Data Structures and Algorithms in Java",  
+    "author": "Robert Lafore",  
+    "price": "500"  
+} 
