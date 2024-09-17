@@ -1,7 +1,8 @@
-H2 database
+
+		H2 database
 http://localhost:8080/h2-console
 
-     Postman
+		Postman
 Select the POST
 Invoke the URL http://localhost:8080/books
 {  
@@ -15,7 +16,6 @@ Postman and send a GET request with the URL http://localhost:8080/books.
 
 GET request with the URL http://localhost:8080/book/{bookid}.
 
-
 DELETE method and invoke the URL http://localhost:8080/book/5433.
 
 Select the PUT
@@ -26,3 +26,5 @@ Select the PUT
     "author": "Robert Lafore",  
     "price": "500"  
 } 
+
+Source URL : https://www.javatpoint.com/spring-boot-crud-operations
