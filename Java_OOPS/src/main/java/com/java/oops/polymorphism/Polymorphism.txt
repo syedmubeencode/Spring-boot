@@ -1,0 +1,5 @@
+ 										
+ 										Encapsulation
+
+* Encapsulation is about bundling data (fields) and methods (functions) that operate on the data into a single unit, typically a class.
+* It also hides the internal state of an object from outside access and only allows access through public methods.
