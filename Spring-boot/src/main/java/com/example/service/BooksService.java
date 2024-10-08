@@ -39,4 +39,8 @@ public class BooksService {
 	public void update(Books books, int bookid) {
 		booksRepository.save(books);
 	}
+	
+	public void testMethod() {
+		String str = "hello";
+	}
 }
