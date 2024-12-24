@@ -1,10 +1,9 @@
 package com.example.repository;
 
-import org.springframework.data.r2dbc.repository.R2dbcRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
 import com.example.entity.User;
 
-@Repository
-public interface UserRepository extends R2dbcRepository<User, Long> {
+public interface UserRepository extends ReactiveCrudRepository<User, Long> {
 }
+
