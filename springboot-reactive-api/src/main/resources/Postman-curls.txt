@@ -1,0 +1,31 @@
+
+	## Get All
+	
+curl --location 'http://localhost:8080/api/customers'
+
+	## Get by Id
+	
+curl --location 'http://localhost:8080/api/customer/1'
+
+	## Post
+	
+curl --location 'http://localhost:8080/api/customer' \
+--header 'Content-Type: application/json' \
+--data '{
+    "firstName": "Syed",
+    "lastName": "Mubeen"
+}'
+
+	## Put by Id
+	
+curl --location --request PUT 'http://localhost:8080/api/customer/1' \
+--header 'Content-Type: application/json' \
+--data '{
+    "firstName": "Syed",
+    "lastName": "Mubeen A"
+}'
+
+	## Delete by id 
+	
+curl --location --request DELETE 'http://localhost:8080/api/customer/6' \
+--data ''
