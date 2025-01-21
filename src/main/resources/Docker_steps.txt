@@ -1,0 +1,36 @@
+Once you make this clone
+
+Step 1: 
+	just go to the location where you putted this service, means where your pom.xml is present.
+
+Step 2:
+	Just build the file with below maven command
+		
+		-> mvn clean package
+		
+	Check page is build successful or not.
+	
+Step 3:
+	Now let's start docker commands
+	you have to create docker image first
+	
+	-> docker build -t sbapp .     {Here . is important, and this cmd build docker file}
+	
+BASIC DOCKER CMDS
+
+	-> docker ps {to check running docker)
+	-> docker images {to check how many images are present in docker}
+	
+Step 4:
+	Once build is complete you can check the docker image with below cmd.
+	
+	-> docker images
+	
+Step 5:
+	Now to run that image and container a container for it, use below cmd.
+	
+	-> docker run -d -p 8080:8080 sbapp
+	
+	Once you run the above cmd your image will start running you can check with below URL
+	-> http://localhost:8080/
+	
