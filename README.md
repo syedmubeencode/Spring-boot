@@ -1,3 +1,131 @@
+src/main/java/com/example/reactiveapp ├── config/ // Configuration files ├── handler/ // Request handlers (business logic) ├── model/ // Domain models ├── repository/ // Reactive repositories ├── router/ // Route configurations ├── service/ // Service classes (optional) ├── controller/ // Controllers (optional) └── ReactiveApplication.java // Main class
+
+yaml
+Copy
+Edit
+
+---
+
+### 1. `model/`
+- **Purpose**: Represents the domain/data model of the application.
+- **Files**: POJOs annotated with Lombok or persistence annotations like `@Document`.
+  
+**Example:**
+```java
+public class User {
+    private String id;
+    private String name;
+    private String email;
+    // Getters and Setters
+}
+2. repository/
+Purpose: Manages database interactions using a reactive approach.
+Files: Interfaces extending ReactiveCrudRepository.
+Example:
+
+java
+Copy
+Edit
+public interface UserRepository extends ReactiveCrudRepository<User, String> {
+    Mono<User> findByEmail(String email);
+}
+3. handler/
+Purpose: Handles incoming requests and contains business logic.
+Files: Classes annotated with @Component, returning Mono or Flux.
+Example:
+
+java
+Copy
+Edit
+@Component
+public class UserHandler {
+    private final UserRepository userRepository;
+
+    public UserHandler(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public Mono<ServerResponse> getUserById(ServerRequest request) {
+        String userId = request.pathVariable("id");
+        return userRepository.findById(userId)
+            .flatMap(user -> ServerResponse.ok().bodyValue(user))
+            .switchIfEmpty(ServerResponse.notFound().build());
+    }
+}
+4. router/
+Purpose: Defines routes and maps them to the corresponding handlers.
+Files: Classes using RouterFunction for declarative routing.
+Example:
+
+java
+Copy
+Edit
+@Configuration
+public class RouterConfig {
+    @Bean
+    public RouterFunction<ServerResponse> routes(UserHandler userHandler) {
+        return RouterFunctions.route()
+            .GET("/users/{id}", userHandler::getUserById)
+            .POST("/users", userHandler::createUser)
+            .build();
+    }
+}
+5. service/ (optional)
+Purpose: Contains business logic between the handler and repository layers for complex workflows.
+Files: Classes annotated with @Service.
+Example:
+
+java
+Copy
+Edit
+@Service
+public class UserService {
+    private final UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public Mono<User> saveUser(User user) {
+        return userRepository.save(user);
+    }
+}
+6. config/
+Purpose: Stores application-specific configurations like WebFlux, database, or security setups.
+Files: Classes annotated with @Configuration.
+Example:
+
+java
+Copy
+Edit
+@Configuration
+public class WebFluxConfig implements WebFluxConfigurer {
+    // Add WebFlux-specific configurations
+}
+7. controller/ (optional in reactive apps)
+Purpose: For hybrid applications combining reactive and traditional MVC approaches.
+Files: Classes annotated with @RestController.
+Key Features of Reactive Programming
+Non-blocking: Utilizes Mono and Flux for asynchronous, non-blocking streams.
+Backpressure: Efficiently handles data flow with demand-based processing.
+Declarative Routing: Uses functional-style routes (RouterFunction).
+Quick Start
+Create the folder structure above in your project.
+Define your models, handlers, repositories, and routers as shown.
+Run your ReactiveApplication.java:
+java
+Copy
+Edit
+@SpringBootApplication
+public class ReactiveApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(ReactiveApplication.class, args);
+    }
+}
+Feel free to extend this structure as your project grows! 🚀
+
+
+
 ## Reactive Micro Services Example
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE)
 [![Build Status](https://travis-ci.org/LearningByExample/reactive-ms-example.svg?branch=master)](https://travis-ci.org/LearningByExample/reactive-ms-example)
