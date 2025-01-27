@@ -1,53 +1,104 @@
-# Spring Boot
+## Reactive Micro Services Example
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE)
+[![Build Status](https://travis-ci.org/LearningByExample/reactive-ms-example.svg?branch=master)](https://travis-ci.org/LearningByExample/reactive-ms-example)
+[![codecov](https://codecov.io/gh/LearningByExample/reactive-ms-example/branch/master/graph/badge.svg)](https://codecov.io/gh/LearningByExample/reactive-ms-example)
+[![codebeat badge](https://codebeat.co/badges/9f473a67-ab5a-4205-82fe-976e9bbb01e6)](https://codebeat.co/projects/github-com-learningbyexample-reactive-ms-example-master)
 
-Spring Boot is a powerful framework for building Java applications. It simplifies the development process by providing pre-configured settings and eliminating boilerplate code, enabling developers to focus on writing business logic.
+## info
+This is an example of doing reactive MicroServices using spring 5 functional web framework and spring boot 2.
 
-## Table of Contents
-- OOPs
-- Spring CRUD
-- Basic Concepts
-- Kafka
-- Spring Reactive
+There is a [Kotlin fork](https://github.com/LearningByExample/KotlinReactiveMS) of this service.
 
-## Introduction
-Spring Boot is an extension of the Spring framework that provides a streamlined way to create standalone, production-ready applications. It integrates key concepts such as Object-Oriented Programming (OOPs), CRUD operations using Spring, and advanced technologies like Kafka for messaging and Spring Reactive for building asynchronous, non-blocking applications.
+This service provide and API that will get the geo location and the sunrise and sunset times from an address.
 
-## Features
-- **OOPs**: Leverages object-oriented principles to organize and structure code effectively.
-- **Spring CRUD**: Provides a robust framework to perform Create, Read, Update, and Delete operations seamlessly.
-- **Basic Concepts**: Simplifies application setup with auto-configuration and starter dependencies.
-- **Kafka**: Offers reliable and scalable messaging for real-time data streaming.
-- **Spring Reactive**: Enables the development of highly performant, non-blocking applications using reactive programming.
+```Gherkin
+Scenario: Get Location
+  Given I've an address
+  When I call the location service
+  Then I should get a geo location
+  And I should get the sunrise and sunset times
+```
+To implement this example we consume a couple of REST APIs.
 
-## Technology
-This project is built using:
-- **Java**: The primary programming language.
-- **Spring Boot**: The core framework for application development.
-- **Kafka**: For real-time messaging and event-driven architecture.
+This example cover several topics: 
 
-## Installation
-To get started with Spring Boot, follow these steps:
-1. Install Java Development Kit (JDK) version 8 or higher.
-2. Download and set up your favorite Integrated Development Environment (IDE), such as IntelliJ IDEA or Eclipse.
-3. Add Spring Boot dependencies to your `pom.xml` or `build.gradle` file.
-4. Run your application using the Spring Boot starter class.
+- Functional programing.
+- Reactive types.
+- Router Functions.
+- Static Web-Content.
+- Creation on Reactive Java Services/Components.
+- Error handling in routes and services.
+- Reactive Web Client to consume external REST Services.
+- Organizing your project in manageable packaging.
 
-## Usage
-The topics covered in this project can be used for:
-- Structuring and organizing code using OOPs principles.
-- Performing database operations using Spring CRUD.
-- Building robust applications with Spring Boot's core features.
-- Implementing messaging systems using Kafka.
-- Developing reactive applications with Spring Reactive programming.
+Includes and in depth look to testing using JUnit5:
+- Unit, Integration and System tests.
+- Mocking, including reactive functions and JSON responses.
+- BDD style assertions.
+- Test tags with maven profiles.
 
-## Contribution
-Developed by **Syed Mubeen**. I'm here to help the community! Feel free to reach out with questions, suggestions, or contributions.
+## usage
 
-## License
-This project is licensed under a simple permissive license. Created by **Syed Mubeen**.
+To run this service:
 
-## Contact
-- **Email**: syedmubeen064@gmail.com
-- **GitHub**: [Your GitHub URL]
-- **Portfolio**: [Your Portfolio URL]
+```shell
+$ mvnw spring-boot:run
+```
 
+## Sample requests
+
+Get from address
+```shell
+$ curl -X GET "http://localhost:8080/api/location/Trafalgar%20Square%2C%20London%2C%20England" -H  "accept: application/json"
+```
+
+Post from JSON
+```shell
+$ curl -X POST "http://localhost:8080/api/location" -H  "accept: application/json" -H  "content-type: application/json" -d "{  \"address\": \"Trafalgar Square, London, England\"}"
+```
+
+Both will produce something like:
+```json
+{
+  "geographicCoordinates": {
+    "latitude": 51.508039,
+    "longitude": -0.128069
+  },
+  "sunriseSunset": {
+    "sunrise": "2017-05-21T03:59:08+00:00",
+    "sunset": "2017-05-21T19:55:11+00:00"
+  }
+}
+```
+_All date and times are ISO 8601 UTC without summer time adjustment_
+## API
+[![View in the embedded Swagger UI](https://avatars0.githubusercontent.com/u/7658037?v=3&s=20) View in the embedded Swagger UI](http://localhost:8080/index.html)
+
+[![Run in Postman](https://lh4.googleusercontent.com/Dfqo9J42K7-xRvHW3GVpTU7YCa_zpy3kEDSIlKjpd2RAvVlNfZe5pn8Swaa4TgCWNTuOJOAfwWY=s20) Run in Postman](https://app.getpostman.com/run-collection/498aea143dc572212f17)
+
+## Project Structure
+
+- [main/java](/src/main/java/org/learning/by/example/reactive/microservices)
+    - [/application](/src/main/java/org/learning/by/example/reactive/microservices/application) : Main Spring boot application and context configuration.  
+    - [/routers](/src/main/java/org/learning/by/example/reactive/microservices/routers) : Reactive routing functions.
+    - [/handlers](/src/main/java/org/learning/by/example/reactive/microservices/handlers) : Handlers used by the routers.
+    - [/services](/src/main/java/org/learning/by/example/reactive/microservices/services) : Services for the business logic needed by handlers.
+    - [/exceptions](/src/main/java/org/learning/by/example/reactive/microservices/exceptions) : Businesses exceptions.
+    - [/model](/src/main/java/org/learning/by/example/reactive/microservices/model) : POJOs.
+- [test/java](/src/test/java/org/learning/by/example/reactive/microservices)
+    - [/application](/src/test/java/org/learning/by/example/reactive/microservices/application) : Application system and unit tests.
+    - [/routers](/src/test/java/org/learning/by/example/reactive/microservices/routers) : Integration tests for routes.
+    - [/handlers](/src/test/java/org/learning/by/example/reactive/microservices/handlers) : Unit tests for handlers.
+    - [/services](/src/test/java/org/learning/by/example/reactive/microservices/services) : Unit tests for services.
+    - [/model](/src/test/java/org/learning/by/example/reactive/microservices/model) : POJOs used by the test.
+    - [/test](/src/test/java/org/learning/by/example/reactive/microservices/test) : Helpers and base classes for testing.
+
+## References
+
+- https://spring.io/blog/2016/09/22/new-in-spring-5-functional-web-framework
+- https://spring.io/blog/2017/02/23/spring-framework-5-0-m5-update
+- http://junit.org/junit5/docs/current/user-guide/#running-tests-build-maven
+- https://github.com/junit-team/junit5-samples
+- https://developers.google.com/maps/documentation/geocoding/intro
+- https://sunrise-sunset.org/api
+- https://en.wikipedia.org/wiki/ISO_8601
