@@ -62,6 +62,8 @@ This section explains the key components of Apache Kafka in simple terms with re
   - Tracking broker availability
   - Managing leader elections
   - Handling configuration management
+ 
+  # Note : firts read above topic and then look below image [Understaing will take around 1 Hr]
 
 ![image](https://github.com/user-attachments/assets/46bf6c51-a6b6-4eb0-8c6e-91ebe2cc11ea)
 
@@ -118,8 +120,7 @@ Ensure Kafka and Zookeeper are running before producing or consuming messages.
 
 Update paths if Kafka is installed in a different directory.
 
-Note : firts read above topic and then look below image [Understaing will take around 1 Hr]
-![image](https://github.com/user-attachments/assets/522e7f14-65bb-48b0-b0fe-04b4d3fd22a4)
+
 
 
 
