@@ -1,3 +1,8 @@
+
+![image](https://github.com/user-attachments/assets/c18dcfa4-1d1c-4381-911d-5da060aa2b3b)
+
+
+
 # Apache Kafka Setup Guide
 
 ## ✅ Run the Application
