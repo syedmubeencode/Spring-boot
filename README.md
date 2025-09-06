@@ -4,6 +4,18 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 
 ## Table of Contents
 
+
+<details>
+<summary>### Core Java & OOPs</summary>
+
+- OOPs Concepts
+- Collections Framework
+- Exception Handling
+- Multithreading & Concurrency
+- Java 8 Features (Streams, Lambda, Optional)
+
+</details>
+
 ### Core Java & OOPs
 - OOPs Concepts
 - Collections Framework
