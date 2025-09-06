@@ -5,7 +5,7 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 ## Table of Contents
 
 <details>
-<summary><b>### Core Java & OOPs</b></summary>
+<summary><b>Core Java & OOPs</b></summary>
 
 - OOPs Concepts  
 - Collections Framework  
@@ -16,7 +16,7 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 </details>
 
 <details>
-<summary><b>### Spring Boot Basics</b></summary>
+<summary><b>Spring Boot Basics</b></summary>
 
 - Introduction to Spring & Spring Boot  
 - Dependency Injection & IoC  
@@ -28,7 +28,7 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 </details>
 
 <details>
-<summary><b>### Spring Boot with Data</b></summary>
+<summary><b>Spring Boot with Data</b></summary>
 
 - Spring Data JPA  
 - Hibernate Basics  
@@ -40,7 +40,7 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 </details>
 
 <details>
-<summary><b>### RESTful Web Services</b></summary>
+<summary><b>RESTful Web Services</b></summary>
 
 - Creating REST APIs  
 - Request & Response Mapping  
@@ -52,7 +52,7 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 </details>
 
 <details>
-<summary><b>### Advanced Spring Boot</b></summary>
+<summary><b>Advanced Spring Boot</b></summary>
 
 - Spring Security (Authentication & Authorization)  
 - JWT (JSON Web Token) Integration  
@@ -64,7 +64,7 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 </details>
 
 <details>
-<summary><b>### Messaging & Streaming</b></summary>
+<summary><b>Messaging & Streaming</b></summary>
 
 - Kafka Integration  
 - RabbitMQ  
@@ -73,7 +73,7 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 </details>
 
 <details>
-<summary><b>### Spring Reactive</b></summary>
+<summary><b>Spring Reactive</b></summary>
 
 - Introduction to Reactive Programming  
 - WebFlux vs MVC  
@@ -83,7 +83,7 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 </details>
 
 <details>
-<summary><b>### Testing</b></summary>
+<summary><b>Testing</b></summary>
 
 - Unit Testing with JUnit & Mockito  
 - Integration Testing  
@@ -93,7 +93,7 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 </details>
 
 <details>
-<summary><b>### Microservices & Cloud</b></summary>
+<summary><b>Microservices & Cloud</b></summary>
 
 - Microservices Architecture  
 - Service Discovery (Eureka, Consul)  
@@ -106,7 +106,7 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 </details>
 
 <details>
-<summary><b>### Extras (Good to Know)</b></summary>
+<summary><b>Extras (Good to Know)</b></summary>
 
 - Design Patterns in Spring  
 - Performance Tuning  
