@@ -3,6 +3,29 @@
 Spring Boot is a powerful framework for building Java applications. It simplifies the development process by providing pre-configured settings and eliminating boilerplate code, enabling developers to focus on writing business logic.
 
 
+🧑‍💻 OOP Concepts in Java
+1. Class & Object
+Class: A blueprint (like a design of a car).
+Object: A real entity created from the class (like an actual car).
+
+java
+class Car {
+    String color;
+    void drive() {
+        System.out.println("Car is driving...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car1 = new Car(); // object
+        car1.color = "Red";
+        car1.drive();
+    }
+}
+2. Encapsulation
+
+
 
 <details>
 <summary><b>Generally Asked Questions</b></summary>
