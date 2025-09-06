@@ -138,19 +138,12 @@ Business logic is the core set of rules or operations that solve real-world prob
 ## Introduction
 Spring Boot is an extension of the Spring framework that provides a streamlined way to create standalone, production-ready applications. It integrates key concepts such as Object-Oriented Programming (OOPs), CRUD operations using Spring, and advanced technologies like Kafka for messaging and Spring Reactive for building asynchronous, non-blocking applications.
 
-<details>
-<summary>📂 Click to view Introduction</summary>
-
-More detailed explanation of **Introduction** here...
-
-</details>
-
 ---
 
 ## Features
 
 <details>
-<summary>📂 Click to view Features</summary>
+<summary>Click to view Features</summary>
 
 - **OOPs**: Leverages object-oriented principles to organize and structure code effectively.  
 - **Spring CRUD**: Provides a robust framework to perform Create, Read, Update, and Delete operations seamlessly.  
@@ -165,7 +158,7 @@ More detailed explanation of **Introduction** here...
 ## Technology
 
 <details>
-<summary>📂 Click to view Technology</summary>
+<summary>Click to view Technology</summary>
 
 This project is built using:
 - **Java**: The primary programming language.  
@@ -180,7 +173,7 @@ This project is built using:
 ## Installation
 
 <details>
-<summary>📂 Click to view Installation Guide</summary>
+<summary>Click to view Installation Guide</summary>
 
 1. Install Java Development Kit (JDK) version 8 or higher.  
 2. Download and set up your favorite Integrated Development Environment (IDE), such as IntelliJ IDEA or Eclipse.  
