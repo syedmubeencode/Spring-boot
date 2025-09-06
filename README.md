@@ -11,7 +11,6 @@ A framework is a ready-made structure that provides reusable code and tools to b
 **Example:** Spring Boot is a framework for building Java applications.
 
 </details>
-
 <details>
 <summary><b>2) What are pre-configured settings in Spring Boot, give example?</b></summary>
 
@@ -19,7 +18,6 @@ Pre-configured settings are default configurations provided by Spring Boot to sa
 **Example:** Spring Boot automatically configures Tomcat as the default server when you add `spring-boot-starter-web`.
 
 </details>
-
 <details>
 <summary><b>3) What is business logic, give example?</b></summary>
 
@@ -27,7 +25,6 @@ Business logic is the core set of rules or operations that solve real-world prob
 **Example:** In a banking app, calculating interest on savings is business logic.
 
 </details>
-
 </details>
 
 ## Table of Contents
