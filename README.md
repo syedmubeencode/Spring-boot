@@ -4,88 +4,115 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 
 ## Table of Contents
 
-
 <details>
 <summary>### Core Java & OOPs</summary>
 
-- OOPs Concepts
-- Collections Framework
-- Exception Handling
-- Multithreading & Concurrency
-- Java 8 Features (Streams, Lambda, Optional)
+- OOPs Concepts  
+- Collections Framework  
+- Exception Handling  
+- Multithreading & Concurrency  
+- Java 8 Features (Streams, Lambda, Optional)  
 
 </details>
 
-### Core Java & OOPs
-- OOPs Concepts
-- Collections Framework
-- Exception Handling
-- Multithreading & Concurrency
-- Java 8 Features (Streams, Lambda, Optional)
+<details>
+<summary>### Spring Boot Basics</summary>
 
-### Spring Boot Basics
-- Introduction to Spring & Spring Boot
-- Dependency Injection & IoC
-- Spring Boot Annotations
-- Spring Boot Starter Projects
-- Configuration (application.properties / application.yml)
-- Profiles & Environment Setup
+- Introduction to Spring & Spring Boot  
+- Dependency Injection & IoC  
+- Spring Boot Annotations  
+- Spring Boot Starter Projects  
+- Configuration (application.properties / application.yml)  
+- Profiles & Environment Setup  
 
-### Spring Boot with Data
-- Spring Data JPA
-- Hibernate Basics
-- CRUD Operations
-- Entity Relationships (OneToOne, OneToMany, ManyToMany)
-- Transaction Management
-- Pagination & Sorting
+</details>
 
-### RESTful Web Services
-- Creating REST APIs
-- Request & Response Mapping
-- Exception Handling (Controller Advice)
-- Validation
-- HATEOAS
-- Swagger / OpenAPI Documentation
+<details>
+<summary>### Spring Boot with Data</summary>
 
-### Advanced Spring Boot
-- Spring Security (Authentication & Authorization)
-- JWT (JSON Web Token) Integration
-- AOP (Aspect Oriented Programming)
-- Caching (EhCache, Redis)
-- Scheduling
-- Actuator & Health Checks
+- Spring Data JPA  
+- Hibernate Basics  
+- CRUD Operations  
+- Entity Relationships (OneToOne, OneToMany, ManyToMany)  
+- Transaction Management  
+- Pagination & Sorting  
 
-### Messaging & Streaming
-- Kafka Integration
-- RabbitMQ
-- JMS
+</details>
 
-### Spring Reactive
-- Introduction to Reactive Programming
-- WebFlux vs MVC
-- Mono & Flux
-- Reactive Repositories
+<details>
+<summary>### RESTful Web Services</summary>
 
-### Testing
-- Unit Testing with JUnit & Mockito
-- Integration Testing
-- TestContainers
-- MockMvc
+- Creating REST APIs  
+- Request & Response Mapping  
+- Exception Handling (Controller Advice)  
+- Validation  
+- HATEOAS  
+- Swagger / OpenAPI Documentation  
 
-### Microservices & Cloud
-- Microservices Architecture
-- Service Discovery (Eureka, Consul)
-- API Gateway (Spring Cloud Gateway)
-- Circuit Breaker (Resilience4j / Hystrix)
-- Config Server & Distributed Config
-- Observability (Sleuth, Zipkin, Micrometer, Prometheus, Grafana)
-- Docker & Kubernetes Basics
+</details>
 
-### Extras (Good to Know)
-- Design Patterns in Spring
-- Performance Tuning
-- Common Interview Scenarios & FAQs
----
+<details>
+<summary>### Advanced Spring Boot</summary>
+
+- Spring Security (Authentication & Authorization)  
+- JWT (JSON Web Token) Integration  
+- AOP (Aspect Oriented Programming)  
+- Caching (EhCache, Redis)  
+- Scheduling  
+- Actuator & Health Checks  
+
+</details>
+
+<details>
+<summary>### Messaging & Streaming</summary>
+
+- Kafka Integration  
+- RabbitMQ  
+- JMS  
+
+</details>
+
+<details>
+<summary>### Spring Reactive</summary>
+
+- Introduction to Reactive Programming  
+- WebFlux vs MVC  
+- Mono & Flux  
+- Reactive Repositories  
+
+</details>
+
+<details>
+<summary>### Testing</summary>
+
+- Unit Testing with JUnit & Mockito  
+- Integration Testing  
+- TestContainers  
+- MockMvc  
+
+</details>
+
+<details>
+<summary>### Microservices & Cloud</summary>
+
+- Microservices Architecture  
+- Service Discovery (Eureka, Consul)  
+- API Gateway (Spring Cloud Gateway)  
+- Circuit Breaker (Resilience4j / Hystrix)  
+- Config Server & Distributed Config  
+- Observability (Sleuth, Zipkin, Micrometer, Prometheus, Grafana)  
+- Docker & Kubernetes Basics  
+
+</details>
+
+<details>
+<summary>### Extras (Good to Know)</summary>
+
+- Design Patterns in Spring  
+- Performance Tuning  
+- Common Interview Scenarios & FAQs  
+
+</details>
 
 ## Introduction
 Spring Boot is an extension of the Spring framework that provides a streamlined way to create standalone, production-ready applications. It integrates key concepts such as Object-Oriented Programming (OOPs), CRUD operations using Spring, and advanced technologies like Kafka for messaging and Spring Reactive for building asynchronous, non-blocking applications.
