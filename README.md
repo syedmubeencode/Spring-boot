@@ -5,7 +5,7 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 <summary><b>Generally Asked Questions</b></summary>
 
 <details>
-<summary><span style="font-size:90%; font-weight:bold;">1) What is framework?</span></summary>
+<summary><b>1) What is framework?</b></summary>
 
 A framework is a ready-made structure that provides reusable code and tools to build applications easily.  
 **Example:** Spring Boot is a framework for building Java applications.
@@ -13,7 +13,7 @@ A framework is a ready-made structure that provides reusable code and tools to b
 </details>
 
 <details>
-<summary><span style="font-size:90%; font-weight:bold;">2) What are pre-configured settings in Spring Boot, give example?</span></summary>
+<summary><b>2) What are pre-configured settings in Spring Boot, give example?</b></summary>
 
 Pre-configured settings are default configurations provided by Spring Boot to save setup time.  
 **Example:** Spring Boot automatically configures Tomcat as the default server when you add `spring-boot-starter-web`.
@@ -21,7 +21,7 @@ Pre-configured settings are default configurations provided by Spring Boot to sa
 </details>
 
 <details>
-<summary><span style="font-size:90%; font-weight:bold;">3) What is business logic, give example?</span></summary>
+<summary><b>3) What is business logic, give example?</b></summary>
 
 Business logic is the core set of rules or operations that solve real-world problems in an application.  
 **Example:** In a banking app, calculating interest on savings is business logic.
