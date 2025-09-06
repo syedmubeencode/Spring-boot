@@ -3,12 +3,76 @@
 Spring Boot is a powerful framework for building Java applications. It simplifies the development process by providing pre-configured settings and eliminating boilerplate code, enabling developers to focus on writing business logic.
 
 ## Table of Contents
-- OOPs
-- Spring CRUD
-- Basic Concepts
-- Kafka
-- Spring Reactive
 
+### Core Java & OOPs
+- OOPs Concepts
+- Collections Framework
+- Exception Handling
+- Multithreading & Concurrency
+- Java 8 Features (Streams, Lambda, Optional)
+
+### Spring Boot Basics
+- Introduction to Spring & Spring Boot
+- Dependency Injection & IoC
+- Spring Boot Annotations
+- Spring Boot Starter Projects
+- Configuration (application.properties / application.yml)
+- Profiles & Environment Setup
+
+### Spring Boot with Data
+- Spring Data JPA
+- Hibernate Basics
+- CRUD Operations
+- Entity Relationships (OneToOne, OneToMany, ManyToMany)
+- Transaction Management
+- Pagination & Sorting
+
+### RESTful Web Services
+- Creating REST APIs
+- Request & Response Mapping
+- Exception Handling (Controller Advice)
+- Validation
+- HATEOAS
+- Swagger / OpenAPI Documentation
+
+### Advanced Spring Boot
+- Spring Security (Authentication & Authorization)
+- JWT (JSON Web Token) Integration
+- AOP (Aspect Oriented Programming)
+- Caching (EhCache, Redis)
+- Scheduling
+- Actuator & Health Checks
+
+### Messaging & Streaming
+- Kafka Integration
+- RabbitMQ
+- JMS
+
+### Spring Reactive
+- Introduction to Reactive Programming
+- WebFlux vs MVC
+- Mono & Flux
+- Reactive Repositories
+
+### Testing
+- Unit Testing with JUnit & Mockito
+- Integration Testing
+- TestContainers
+- MockMvc
+
+### Microservices & Cloud
+- Microservices Architecture
+- Service Discovery (Eureka, Consul)
+- API Gateway (Spring Cloud Gateway)
+- Circuit Breaker (Resilience4j / Hystrix)
+- Config Server & Distributed Config
+- Observability (Sleuth, Zipkin, Micrometer, Prometheus, Grafana)
+- Docker & Kubernetes Basics
+
+### Extras (Good to Know)
+- Design Patterns in Spring
+- Performance Tuning
+- Common Interview Scenarios & FAQs
 ---
 
 ## Introduction
