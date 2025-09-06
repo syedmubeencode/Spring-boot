@@ -1,6 +1,11 @@
 # Spring Boot
 
 Spring Boot is a powerful framework for building Java applications. It simplifies the development process by providing pre-configured settings and eliminating boilerplate code, enabling developers to focus on writing business logic.
+
+<details>
+<summary><b><mark>1) What is framework?</mark></b></summary>
+
+
 <details>
 <summary><b>Generally Asked Questions</b></summary>
 <details>
