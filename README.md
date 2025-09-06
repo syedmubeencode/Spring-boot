@@ -9,7 +9,7 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 <details>
 <summary><b>1) What is framework?</b></summary>
 A framework is a ready-made structure that provides reusable code and tools to build applications easily.  
-**Example:** Spring Boot is a framework for building Java applications.
+<b>Example:</b> Spring Boot is a framework for building Java applications.
 </details>
 <details>
 <summary><b>2) What are pre-configured settings in Spring Boot, give example?</b></summary>
