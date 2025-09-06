@@ -29,6 +29,45 @@ Business logic is the core set of rules or operations that solve real-world prob
 <summary><b>Core Java & OOPs</b></summary>
 
 - OOPs Concepts  
+<details>
+<summary><b>OOPs</b></summary>
+
+Object-Oriented Programming helps organize code into reusable objects.  
+**Real-world Example:** A **Car** can be treated as an object with properties (color, model) and behaviors (drive, brake).
+
+</details>
+
+<details>
+<summary><b>Spring CRUD</b></summary>
+
+Spring Boot simplifies Create, Read, Update, and Delete operations with minimal boilerplate code.  
+**Real-world Example:** A **Library System** where you can add new books (Create), view books (Read), update book details (Update), or remove old books (Delete).
+
+</details>
+
+<details>
+<summary><b>Basic Concepts</b></summary>
+
+Spring Boot provides auto-configuration, starter dependencies, and an embedded server for faster development.  
+**Real-world Example:** Like a **pre-cooked meal kit** where most ingredients are ready — you just assemble and start eating.
+
+</details>
+
+<details>
+<summary><b>Kafka</b></summary>
+
+Kafka is a distributed messaging system for real-time data streaming between applications.  
+**Real-world Example:** Like a **news agency** that publishes headlines (producer), and many subscribers (consumers) get the updates instantly.
+
+</details>
+
+<details>
+<summary><b>Spring Reactive</b></summary>
+
+Spring Reactive (WebFlux) allows building non-blocking, high-performance applications using reactive streams.  
+**Real-world Example:** Like a **restaurant with token system** where multiple customers are served efficiently without blocking others.
+
+</details>
 - Collections Framework  
 - Exception Handling  
 - Multithreading & Concurrency  
