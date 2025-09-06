@@ -3,27 +3,7 @@
 Spring Boot is a powerful framework for building Java applications. It simplifies the development process by providing pre-configured settings and eliminating boilerplate code, enabling developers to focus on writing business logic.
 
 
-🧑‍💻 OOP Concepts in Java
-1. Class & Object
-Class: A blueprint (like a design of a car).
-Object: A real entity created from the class (like an actual car).
 
-java
-class Car {
-    String color;
-    void drive() {
-        System.out.println("Car is driving...");
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Car car1 = new Car(); // object
-        car1.color = "Red";
-        car1.drive();
-    }
-}
-2. Encapsulation
 
 
 
@@ -249,3 +229,199 @@ This project is built using:
 - Use the command below to run the Spring Boot application:  
   ```bash
   mvn spring-boot:run
+
+
+
+# 🧑‍💻 OOP Concepts in Java
+
+## 1. Class & Object
+
+**Class:** A blueprint (like a design of a car)  
+**Object:** A real entity created from the class (like an actual car)
+
+class Car {
+String color;
+void drive() {
+System.out.println("Car is driving...");
+}
+}
+
+public class Main {
+public static void main(String[] args) {
+Car car1 = new Car(); // object
+car1.color = "Red";
+car1.drive();
+}
+}
+
+text
+
+---
+
+## 2. Encapsulation
+
+Wrapping data and methods together, keeping fields **private** with public getters/setters.
+
+class BankAccount {
+private double balance; // hidden from outside
+
+text
+public void deposit(double amount) {
+    balance += amount;
+}
+public double getBalance() {
+    return balance;
+}
+}
+
+public class Main {
+public static void main(String[] args) {
+BankAccount acc = new BankAccount();
+acc.deposit(500);
+System.out.println(acc.getBalance()); // Encapsulated access
+}
+}
+
+text
+
+---
+
+## 3. Inheritance
+
+One class inherits another to reuse code.
+
+class Animal {
+void eat() { System.out.println("Eating..."); }
+}
+
+class Dog extends Animal {
+void bark() { System.out.println("Barking..."); }
+}
+
+public class Main {
+public static void main(String[] args) {
+Dog d = new Dog();
+d.eat(); // inherited
+d.bark(); // own method
+}
+}
+
+text
+
+---
+
+## 4. Polymorphism
+
+Many forms → Same method behaves differently.
+
+### (a) Compile-time Polymorphism (Method Overloading)
+
+class MathUtil {
+int add(int a, int b) { return a + b; }
+double add(double a, double b) { return a + b; }
+}
+
+public class Main {
+public static void main(String[] args) {
+MathUtil m = new MathUtil();
+System.out.println(m.add(2, 3)); // calls int version
+System.out.println(m.add(2.5, 3.5)); // calls double version
+}
+}
+
+text
+
+### (b) Runtime Polymorphism (Method Overriding)
+
+class Animal {
+void sound() { System.out.println("Animal makes sound"); }
+}
+
+class Dog extends Animal {
+@Override
+void sound() { System.out.println("Dog barks"); }
+}
+
+public class Main {
+public static void main(String[] args) {
+Animal a = new Dog(); // upcasting
+a.sound(); // Runtime: calls Dog’s method
+}
+}
+
+text
+
+---
+
+## 5. Abstraction
+
+Hiding implementation details and showing only essential features.
+
+abstract class Shape {
+abstract void draw(); // no body
+}
+
+class Circle extends Shape {
+void draw() { System.out.println("Drawing Circle"); }
+}
+
+public class Main {
+public static void main(String[] args) {
+Shape s = new Circle(); // abstraction
+s.draw();
+}
+}
+
+text
+
+---
+
+## 6. Interface
+
+Defines a contract (all methods must be implemented).  
+Supports multiple inheritance.
+
+interface Vehicle {
+void start();
+}
+
+class Bike implements Vehicle {
+public void start() { System.out.println("Bike starts with kick"); }
+}
+
+public class Main {
+public static void main(String[] args) {
+Vehicle v = new Bike();
+v.start();
+}
+}
+
+text
+
+---
+
+## 7. Association / Aggregation / Composition
+
+- **Association:** Relationship between two classes.
+- **Aggregation:** "Has-a" relationship (independent).
+- **Composition:** "Has-a" but dependent (strong ownership).
+
+class Engine {
+void start() { System.out.println("Engine starts"); }
+}
+
+class Car {
+private Engine engine; // Composition
+Car() { engine = new Engine(); }
+void drive() { engine.start(); }
+}
+
+public class Main {
+public static void main(String[] args) {
+Car car = new Car();
+car.drive();
+}
+}
+
+text
+undefined
