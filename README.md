@@ -22,6 +22,7 @@ public class MyService {
         System.out.println("Service is running...");
     }
 }
+```java
 
 </details>
 
