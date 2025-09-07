@@ -15,14 +15,12 @@ Spring instantiates, configures, and manages the lifecycle of beans.
 Beans are typically your application classes like services, repositories, controllers, etc.
 
 **Example:**  
-```java
 @Component
 public class MyService {
     public void serve() {
         System.out.println("Service is running...");
     }
 }
-```java
 
 </details>
 
