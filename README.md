@@ -26,6 +26,26 @@ public class MyService {
 
 
 <details>
+<summary><b>✅ What is a Bean in Spring?</b></summary>
+
+**Definition:**  
+Bean is simply an object that is managed by the Spring container.
+
+Spring instantiates, configures, and manages the lifecycle of beans.
+
+Beans are typically your application classes like services, repositories, controllers, etc.
+
+**Example:**  
+@Component
+public class MyService {
+    public void serve() {
+        System.out.println("Service is running...");
+    }
+}
+</details>
+
+
+<details>
 <summary><b>Generally Asked Questions</b></summary>
 <details>
 <summary><b>1) What is framework?</b></summary>
