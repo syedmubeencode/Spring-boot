@@ -4,7 +4,24 @@ Spring Boot is a powerful framework for building Java applications. It simplifie
 
 
 
+<details>
+<summary><b>✅ What is a Bean in Spring?</b></summary>
 
+**Definition:**  
+Bean is simply an object that is managed by the Spring container.  
+
+Spring instantiates, configures, and manages the lifecycle of beans.  
+
+Beans are typically your application classes like services, repositories, controllers, etc.
+
+**Example:**  
+```java
+@Component
+public class MyService {
+    public void serve() {
+        System.out.println("Service is running...");
+    }
+}
 
 
 <details>
