@@ -1,117 +1,176 @@
-# Business Management Web Application : <br>
+# HRMS (Human Resource Management System)
 
-![home (2)](https://github.com/SuhasKamate/Business_Management_Project/assets/126138738/e8db8f17-72d6-42a0-b264-def0bf883bbf)
+##  Mevcut Diller / Available Languages
+[🇹🇷 Türkçe](#türkçe) | [🇬🇧 English](#english)
 
-
-
-## Project Desc : Business Management Web Application 
-  => The Business Management Web Application is a comprehensive tool designed to help businesses manage various aspects of their operations. 
-          It provides a user-friendly interface for tasks like managing customer data, inventory, orders, and more.
+---
+## Demo Video
 
 
 
-## Features  :
+## Türkçe 
 
-- **Customer Management**: Easily add, update, and delete customer information.
-- **Inventory Management**: Keep track of your inventory items, including stock levels and pricing.
-- **Order Management**: Manage customer orders such as order creation .
-- **User Authentication**: Secure login and authentication for admin and staff members.
-- **Role-Based Access Control**: Define roles and permissions for different user types.
-- **Thymeleaf Templates**: Utilizes Thymeleaf for dynamic HTML templates.
-- **Database Integration**: Integrated with MySQL for data storage.
+### Proje Açıklaması
+HRMS (İnsan Kaynakları Yönetim Sistemi) projesi, iş ilanlarının, iş başvurularının, işveren ve iş arayan bilgilerinin yönetildiği, Spring Boot tabanlı bir web servis uygulamasıdır.  
+Proje, REST API mimarisi ile geliştirilmiş olup, **DTO**, **Request-Response Pattern**, **Validation** ve **Global Exception Handling** gibi modern yazılım geliştirme tekniklerini içermektedir.
 
+---
 
+### Özellikler
+- **Şehir Yönetimi**: Şehir ekleme, listeleme.
+- **İş Pozisyonu Yönetimi**: Yeni iş pozisyonu ekleme, listeleme.
+- **İşveren Yönetimi**: İşveren kaydı, listeleme.
+- **Aday Yönetimi**: Aday kaydı, listeleme.
+- **İş İlanı Yönetimi**: İş ilanı ekleme, listeleme, filtreleme.
+- **İş Başvurusu Yönetimi**: Adayların iş ilanlarına başvuru yapabilmesi.
+- **Hata Yönetimi**: `@ControllerAdvice` ile global exception handling.
+- **Validasyon**: `@NotBlank`, `@Size` gibi anotasyonlarla alan doğrulama.
 
+---
 
-## Technologies Used :
+###  Kullanılan Teknolojiler
+- **Java 17**
+- **Spring Boot**
+- **Spring Data JPA (Hibernate)**
+- **PostgreSQL**
+- **Lombok**
+- **Validation API (Jakarta Validation)**
+- **Jackson**
+- **Postman (API Testleri için)**
 
-- Spring Boot: Backend framework for building Java-based web applications.
-- Thymeleaf: Server-side Java template engine for dynamic HTML generation.
-- MySQL: Relational database management system for data storage.
-- IDE/Tool : Spring Tool Suite 4 (Eclipse)
+---
 
+###  Proje Katmanları
+- **Entity**: Veritabanı tablolarını temsil eden sınıflar.
+- **DTO**: Kullanıcıya döndürülecek veri transfer objeleri.
+- **Request**: Kullanıcıdan alınacak verileri temsil eden sınıflar.
+- **Service**: İş mantığı katmanı.
+- **Repository (DAO)**: Veritabanı erişim katmanı.
+- **Controller**: API uç noktalarının bulunduğu katman.
+- **Core Utilities**: `Result`, `DataResult`, `SuccessResult`, `ErrorResult` gibi ortak dönüş yapıları.
 
+**Result Yapısı:**
+- `Result`: İşlem sonucu (başarılı / başarısız) ve mesaj döner.
+- `DataResult<T>`: İşlem sonucu + veri döner.
+- `SuccessResult`, `ErrorResult`: Başarılı veya hatalı işlem durumları için hazır sınıflar.
 
+---
 
-## Installation :
+###  Örnek API Endpoint'leri
+| HTTP | Endpoint | Açıklama |
+|------|----------|----------|
+| POST | `/api/employers/register` | Yeni işveren kaydı |
+| GET  | `/api/employers/getAll` | Tüm işverenleri listele |
+| POST | `/api/candidateController/register` | Yeni aday kaydı |
+| GET  | `/api/candidateController/getAll` | Tüm adayları listele |
+| POST | `/api/jobAdvertisements/add` | Yeni iş ilanı ekle |
+| GET  | `/api/jobAdvertisements/getAll` | Tüm iş ilanlarını listele |
+| POST | `/api/jobApplications/apply` | Adayın ilana başvurması |
 
-1. Clone the repository : $ git clone https://github.com/SuhasKamate/Business_Management_Project.git <br>
+---
 
-2. Import the project inside STS/Eclipse : <br>
-     - Open STS/Eclipse > file > import > maven > existing project > browse > finish . <br>
-     
-3. Make sure you are in the Business_Management_Project directory. <br>
+###  Örnek JSON İstekleri
 
-![packageExplorer](https://github.com/SuhasKamate/Business_Management_Project/assets/126138738/3ea1eb7f-8e49-4b76-96e4-798b6b8e8715)
+**İşveren Kayıt:**
+```json
+{
+    "name": "Aysu",
+    "lastName": "Ay",
+    "nationalId": "12345678901",
+    "birthDate": 2000,
+    "email": "aysu@example.com",
+    "password": "password123",
+    "confirmPassword": "password123"
+}
+```
 
-
-4.Configure the database connection is application.properties (check the Database section for more information). <br>
-
-5.Run the project (by running main method is BusinessProjectApplication.java) OR right clink on the project > Run As > Spring Boot App. <br>
-
-6.Open http://localhost:2330/home in any browser. <br>
-
-7.Now your tables will be created in the databse. <br>
-   - You have to add one admin data manually to login as admin, So add one admin data. <br>
-    
-
-
-
-## Database :
-
-MySQL can be used as the database for this project. 
-The database connection can be configured in the application.properties file, with the appropriate values for the following properties: <br>
-
-spring.datasource.name=[Your Database Name] <br>
-spring.datasource.url=jdbc:mysql://localhost:3306/[Your Database Name] <br>
-spring.datasource.password=[Your password] <br>
-spring.datasource.username=[Your username] <br>
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver <br>
-spring.jpa.hibernate.ddl-auto=update <br>
-server.port=2330[Optional] <br>
-
-
-
-
-## WorkFlow :
-
-![workflow](https://github.com/SuhasKamate/Business_Management_Project/assets/126138738/aea72470-49c8-41a4-8974-48737638ae19)
-
-
-
-
-
-## Preview :
-
-
-#### Products 
-
-![products (2)](https://github.com/SuhasKamate/Business_Management_Project/assets/126138738/0496f63a-f30c-4108-91a7-966bd37b2b54)
-
-
-#### Location 
-
-![locateus](https://github.com/SuhasKamate/Business_Management_Project/assets/126138738/30e40d74-d2f0-48cb-91b3-ea515f12c498)
+## English 
 
 
+# HRMS (Human Resource Management System)
 
-#### Login Page
+##  Project Description
+HRMS (Human Resource Management System) is a Spring Boot-based web service application designed for managing job postings, applications, employer and candidate information.  
+It follows the REST API architecture and implements **DTO**, **Request-Response Pattern**, **Validation**, and **Global Exception Handling**.
 
-![logins](https://github.com/SuhasKamate/Business_Management_Project/assets/126138738/9c1efb48-5b23-4a43-8c96-81d55a7b1180)
+---
 
+##  Features
+- **City Management**: Add and list cities.
+- **Job Position Management**: Add and list job positions.
+- **Employer Management**: Register and list employers.
+- **Candidate Management**: Register and list job seekers.
+- **Job Advertisement Management**: Add, list, and filter job ads.
+- **Job Application Management**: Allow candidates to apply for job ads.
+- **Error Handling**: Global exception handling with `@ControllerAdvice`.
+- **Validation**: Field validation with annotations like `@NotBlank`, `@Size`.
 
+---
 
+##  Technologies Used
+- **Java 17**
+- **Spring Boot**
+- **Spring Data JPA (Hibernate)**
+- **PostgreSQL**
+- **Lombok**
+- **Validation API (Jakarta Validation)**
+- **Jackson**
+- **Postman** for API testing
 
-#### AdminPanel
+---
 
-![adminpanel](https://github.com/SuhasKamate/Business_Management_Project/assets/126138738/b89aa5ee-3f7f-4145-b063-048729e7fbe9)
+##  Project Layers
+- **Entity**: Represents database tables.
+- **DTO**: Data Transfer Objects for API responses.
+- **Request**: Classes for incoming API data.
+- **Service**: Business logic layer.
+- **Repository (DAO)**: Database access layer.
+- **Controller**: REST API endpoints.
+- **Core Utilities**: Common response classes like `Result`, `DataResult`, `SuccessResult`, `ErrorResult`.
 
+**Result Structure:**
+- `Result`: Returns success/failure status and a message.
+- `DataResult<T>`: Returns status + data.
+- `SuccessResult`, `ErrorResult`: Ready-made classes for success/error cases.
 
-#### UserPanel 
+---
 
-![userpanel](https://github.com/SuhasKamate/Business_Management_Project/assets/126138738/e0f81692-c049-4a2f-a78d-30d3906f4429)
+##  Sample API Endpoints
+| HTTP | Endpoint | Description |
+|------|----------|-------------|
+| POST | `/api/employers/register` | Register a new employer |
+| GET  | `/api/employers/getAll` | Get all employers |
+| POST | `/api/candidateController/register` | Register a new candidate |
+| GET  | `/api/candidateController/getAll` | Get all candidates |
+| POST | `/api/jobAdvertisements/add` | Add a new job advertisement |
+| GET  | `/api/jobAdvertisements/getAll` | Get all job advertisements |
+| POST | `/api/jobApplications/apply` | Apply for a job advertisement |
 
+---
 
-### Exception page
+##  Sample JSON Requests
 
-![exceptionPage](https://github.com/SuhasKamate/Business_Management_Project/assets/126138738/4349a429-61ff-4ecd-a463-2900874e1ea5)
+**Employer Registration:**
+```json
+{
+  "companyName": "Tech Solutions Ltd.",
+  "companyWebPage": "https://techsolutions.com",
+  "email": "contact@techsolutions.com",
+  "phoneNumber": "+1-555-123-4567",
+  "password": "password123",
+  "confirmPassword": "password123"
+}
+```
+**Candidate Registration:**
+```json
+{
+    "name": "Aysu",
+    "lastName": "Ay",
+    "nationalId": "12345678901",
+    "birthDate": 2000,
+    "email": "aysu@example.com",
+    "password": "password123",
+    "confirmPassword": "password123"
+}
+
+```
