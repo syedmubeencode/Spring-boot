@@ -1,0 +1,33 @@
+curl --location 'http://localhost:8080/api/receipt/generate' \
+--header 'Content-Type: application/xml' \
+--data '<Transaction>
+    <storeId>68828</storeId>
+    <storeName>CVS Pharmacy Demo Store</storeName>
+    <customerName>Syed Mubeen</customerName>
+    <transactionId>TXN-987654</transactionId>
+    <transactionTime>2025-11-28T10:35:00</transactionTime>
+    <items>
+        <item>
+            <sku>111001</sku>
+            <name>Ice Cream Vanilla</name>
+            <quantity>2</quantity>
+            <unitPrice>55.00</unitPrice>
+            <lineTotal>110.00</lineTotal>
+        </item>
+        <item>
+            <sku>111002</sku>
+            <name>Chocolate Bar</name>
+            <quantity>3</quantity>
+            <unitPrice>20.00</unitPrice>
+            <lineTotal>60.00</lineTotal>
+        </item>
+        <item>
+            <sku>111003</sku>
+            <name>Bottle of Water</name>
+            <quantity>1</quantity>
+            <unitPrice>15.00</unitPrice>
+            <lineTotal>15.00</lineTotal>
+        </item>
+    </items>
+    <totalAmount>185.00</totalAmount>
+</Transaction>'

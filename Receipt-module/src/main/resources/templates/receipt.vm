@@ -1,0 +1,20 @@
+## Simple text receipt using Velocity
+
+RECEIPT
+=======
+
+Store : $txn.storeId - $txn.storeName
+Cust  : $txn.customerName
+TxnID : $txn.transactionId
+Time  : $txn.transactionTime
+
+Items
+-----
+#foreach( $item in $txn.items )
+- $item.name (SKU: $item.sku)
+  Qty: $item.quantity  Price: $item.unitPrice  Line Total: $item.lineTotal
+#end
+
+---------------------------
+TOTAL AMOUNT : $txn.totalAmount
+Thank you for shopping with us!
