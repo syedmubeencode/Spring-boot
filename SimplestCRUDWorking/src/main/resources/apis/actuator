@@ -1,0 +1,12 @@
+	
+	http://localhost:9090/actuator/health
+Shows application "UP" or "DOWN" status.
+
+	http://localhost:9090/actuator/metrics
+List of available metrics (memory, cpu, etc.).
+
+	http://localhost:9090/actuator/env
+Shows the current Spring Environment properties.
+
+	http://localhost:9090/actuator/loggers
+Allows you to view and change log levels at runtime.

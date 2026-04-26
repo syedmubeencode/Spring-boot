@@ -1,0 +1,6 @@
+curl --location --request POST 'http://localhost:9091/api/addBook' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "title": "Think Again",
+    "author": "Syed Mubeen"
+}'

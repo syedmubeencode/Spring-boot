@@ -1,0 +1,2 @@
+curl --location --request DELETE 'http://localhost:9091/api/deleteBookById/1' \
+--header 'Content-Type: application/json'

@@ -1,0 +1,2 @@
+curl --location --request GET 'http://localhost:9091/api/getAllBooks' \
+--header 'Content-Type: application/json'

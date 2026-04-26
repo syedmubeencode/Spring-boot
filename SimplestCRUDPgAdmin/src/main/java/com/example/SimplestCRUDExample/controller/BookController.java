@@ -2,6 +2,10 @@ package com.example.SimplestCRUDExample.controller;
 
 import com.example.SimplestCRUDExample.model.Book;
 import com.example.SimplestCRUDExample.repo.BookRepository;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,11 +17,13 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
+@Tag(name = "Book Controller", description = "Management APIs for Books")
 public class BookController {
 
     @Autowired
     BookRepository bookRepository;
 
+    @Operation(summary = "Retrieve all books", description = "Gets a list of all books in the database")
     @GetMapping("/getAllBooks")
     public ResponseEntity<List<Book>> getAllBooks() {
         try {
@@ -34,6 +40,7 @@ public class BookController {
         }
     }
 
+    @Operation(summary = "Get a book by ID")
     @GetMapping("/getBookById/{id}")
     public ResponseEntity<Book> getBookById(@PathVariable Long id) {
         Optional<Book> bookObj = bookRepository.findById(id);
@@ -44,6 +51,7 @@ public class BookController {
         }
     }
 
+    @Operation(summary = "Add a new book")
     @PostMapping("/addBook")
     public ResponseEntity<Book> addBook(@RequestBody Book book) {
         try {
@@ -54,6 +62,7 @@ public class BookController {
         }
     }
 
+    @Operation(summary = "This will upadte the book")
     @PostMapping("/updateBook/{id}")
     public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book book) {
         try {
@@ -73,6 +82,7 @@ public class BookController {
         }
     }
 
+    @Operation(summary = "This will delete book by id")
     @DeleteMapping("/deleteBookById/{id}")
     public ResponseEntity<HttpStatus> deleteBook(@PathVariable Long id) {
         try {
@@ -82,6 +92,8 @@ public class BookController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    
+    @Operation(summary = "This will delete all books")
     @DeleteMapping("/deleteAllBooks")
     public ResponseEntity<HttpStatus> deleteAllBooks() {
         try {
