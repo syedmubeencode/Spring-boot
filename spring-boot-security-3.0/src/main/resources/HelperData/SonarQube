@@ -1,0 +1,19 @@
+## Check API
+http://localhost:8123/products/welcome
+
+
+## To add user
+curl --location 'http://localhost:8123/products/new' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Basant",
+    "email": "basant@example.com",
+    "password": "password123",
+    "roles": "ROLE_ADMIN"
+}'
+
+
+
+curl --location 'http://localhost:8123/products/all' \
+--header 'Authorization: Basic YWRtaW5fdXNlcjphZG1pbl9wYXNzd29yZA==' \
+--header 'Cookie: JSESSIONID=3C9BF3E3FE3A2744BF0C766A4D628E6B'

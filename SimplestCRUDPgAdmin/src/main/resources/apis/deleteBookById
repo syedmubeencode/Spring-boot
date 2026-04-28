@@ -1,2 +1,8 @@
 curl --location --request DELETE 'http://localhost:9091/api/deleteBookById/1' \
 --header 'Content-Type: application/json'
+
+
+
+curl --location --request DELETE 'http://localhost:9091/api/deleteBookById/1?confirm=true' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: JSESSIONID=3C9BF3E3FE3A2744BF0C766A4D628E6B'
