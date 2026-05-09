@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>OmniStore POS Terminal</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		</meta>
+	</head>
+	<body class="bg-gray-100 p-8">
+		<div
+			class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+			<div
+				class="bg-blue-600 p-4 flex justify-between items-center text-white">
+				<h1 class="text-xl font-bold">OMNISTORE POS</h1>
+				<span id="txn-display">Txn: --</span>
+			</div>
+
+			<div class="p-6 grid grid-cols-3 gap-6">
+				<!-- Left: Scanning & Input -->
+				<div class="col-span-2">
+					<div class="flex gap-2 mb-4">
+						<input id="sku-input" type="text"
+							placeholder="Scan SKU (SKU-001)"
+							class="flex-1 border p-2 rounded">
+						<button onclick="addItem()"
+							class="bg-green-500 text-white px-4 py-2 rounded">Add
+							Item</button>
+						</input>
+					</div>
+
+					<table class="w-full text-left border-collapse">
+						<thead>
+							<tr class="bg-gray-200">
+								<th class="p-2">Item</th>
+								<th class="p-2">Qty</th>
+								<th class="p-2">Price</th>
+							</tr>
+						</thead>
+						<tbody id="cart-table"></tbody>
+					</table>
+				</div>
+
+				<!-- Right: Payment -->
+				<div class="bg-gray-50 p-4 border-l">
+					<h2 class="text-lg font-semibold mb-4">Total</h2>
+					<div id="total-amount"
+						class="text-4xl font-bold text-blue-600 mb-8">$0.00</div>
+					<button onclick="processPayment()"
+						class="w-full bg-blue-600 text-white py-4 rounded-lg font-bold hover:bg-blue-700">
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<script> let currentTxnId = ""; // Start Transaction on Load async
+			function init() { try { const res = await fetch('/api/cart/begin', {
+			method: 'POST' }); if (!res.ok) throw new Error("Failed to start
+			transaction"); const data = await res.json(); currentTxnId =
+			data.transactionId; document.getElementById('txn-display').innerText
+			= `Txn: ${currentTxnId}`; } catch (err) {
+			console.error("Initialization Error:", err); alert("Could not
+			connect to the POS server. Check if port 8081 is active."); } }
+			async function addItem() { const skuInput =
+			document.getElementById('sku-input'); const sku = skuInput.value; if
+			(!sku) { alert("Please enter a SKU"); return; } try { const res =
+			await fetch(`/api/cart/${currentTxnId}/add`, { method: 'POST',
+			headers: { 'Content-Type': 'application/json' }, body:
+			JSON.stringify({ itemId: sku, quantity: 1 }) }); const txn = await
+			res.json(); updateUI(txn); skuInput.value = ""; // Clear input after
+			adding } catch (err) { console.error("Add Item Error:", err); } }
+			async function processPayment() { try { const res = await
+			fetch(`/api/cart/${currentTxnId}/pay`, { method: 'POST' }); const
+			blob = await res.blob(); const url =
+			window.URL.createObjectURL(blob); const a =
+			document.createElement('a'); a.href = url; a.download =
+			`Receipt_${currentTxnId}.pdf`; document.body.appendChild(a);
+			a.click(); a.remove(); alert("Transaction Completed and XML Stored!");
+			location.reload(); } catch (err) { console.error("Payment Error:",
+			err); } } function updateUI(txn) { const table =
+			document.getElementById('cart-table'); if (!txn.items) return;
+			table.innerHTML = txn.items.map(i => ` <tr class="border-b">
+				<td class="p-2">${i.description}</td>
+				<td class="p-2">${i.quantity}</td>
+				<td class="p-2">$${i.price.toFixed(2)}</td>
+			</tr>
+			`).join(''); document.getElementById('total-amount').innerText =
+			`$${txn.totalAmount.toFixed(2)}`; } // Call init when the page loads
+			init(); </script>
+	</body>
+</html>
