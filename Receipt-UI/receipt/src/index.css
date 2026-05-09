@@ -1,0 +1,365 @@
+/* --- Global Reset & Modern Variables --- */
+:root {
+  --primary: #4f46e5;      /* Indigo */
+  --primary-hover: #4338ca;
+  --success: #16a34a;      /* Green */
+  --success-hover: #15803d;
+  --danger: #ef4444;       /* Red */
+  --danger-light: #fee2e2;
+  --bg-app: #f9fafb;       /* Soft light background */
+  --surface: #ffffff;      /* White panels */
+  --text-main: #1f2937;    /* Charcoal */
+  --text-muted: #6b7280;   /* Muted gray */
+  --border: #e5e7eb;       /* Divider color */
+  --radius-lg: 16px;
+  --radius-md: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Global Navbar Style --- */
+nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+nav .max-w-7xl {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav span:first-child {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: -0.025em;
+}
+
+nav span:last-child {
+  background-color: #f3f4f6;
+  color: var(--text-muted);
+  font-family: monospace;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: bold;
+}
+
+/* --- Layout Grid for POS Home --- */
+.max-w-7xl.grid {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .max-w-7xl.grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Left Side Workspace & Header */
+.md\:col-span-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+header {
+  background: #f3f4f6;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+header p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+header strong {
+  color: var(--primary);
+  font-family: monospace;
+}
+
+/* Common Buttons */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-weight: 600;
+}
+
+header button {
+  background: #e0e7ff;
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+}
+
+header button:hover {
+  background: #c7d2fe;
+}
+
+/* SKU Bar Input Form */
+form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+form input[type="text"] {
+  flex-grow: 1;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  background-color: var(--surface);
+}
+
+form input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+form button[type="submit"] {
+  background: var(--primary);
+  color: #fff;
+  padding: 0 1.5rem;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+}
+
+form button[type="submit"]:hover {
+  background: var(--primary-hover);
+}
+
+/* Quick Add Product Catalog Cards */
+h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.grid-cols-2 button {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.grid-cols-2 button:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
+}
+
+.grid-cols-2 span:first-child {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+.grid-cols-2 span:nth-child(2) {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: var(--text-main);
+  margin: 0.5rem 0;
+}
+
+.grid-cols-2 span:last-child {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* --- Right Side Cart Terminal --- */
+.bg-white.border {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+}
+
+/* Cart Header */
+.border-b {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: #fcfcfd;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.border-b span:first-child {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.border-b span:last-child {
+  background: #e0e7ff;
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+}
+
+/* Cart Items Container */
+.flex-grow {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1.25rem;
+}
+
+.flex-grow p {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Cart Row Details */
+.flex-grow .bg-gray-50 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #f9fafb;
+  margin-bottom: 0.75rem;
+}
+
+.flex-grow .bg-gray-50 h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.flex-grow .bg-gray-50 p {
+  text-align: left;
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Cart Plus, Minus, Trash Controls */
+.gap-2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gap-2 button {
+  background: #f3f4f6;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gap-2 button:hover {
+  background: #e5e7eb;
+}
+
+.gap-2 .text-red-500 {
+  background: var(--danger-light);
+  color: var(--danger);
+  margin-left: 0.5rem;
+}
+
+.gap-2 .text-red-500:hover {
+  background: #fecaca;
+}
+
+/* Cart Bottom Panel */
+.border-t {
+  padding: 1.25rem;
+  border-top: 1px solid var(--border);
+  background: #f9fafb;
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+}
+
+.border-t .flex {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+}
+
+/* Big Proceed Green Button */
+.border-t button {
+  width: 100%;
+  background: var(--success);
+  color: #fff;
+  padding: 1.1rem;
+  border-radius: var(--radius-md);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.border-t button:hover:not(:disabled) {
+  background: var(--success-hover);
+}
+
+.border-t button:disabled {
+  background: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* --- Icon SVG alignment spacing --- */
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.25rem;
+}
